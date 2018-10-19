@@ -22,5 +22,8 @@ export class ListsComponent implements OnInit {
 
   ngOnInit() {
   }
+  searchMovies(){
+    
+  }
 
 }
