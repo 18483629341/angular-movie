@@ -1,3 +1,5 @@
 服务用到的请求模块：
    httpClient 有兼容性问题
    需要angular4.3.以上的版本才能支持！！！！
+使用map 方法，因版本6有点问题，
+   cnpm install --save rxjs-compat

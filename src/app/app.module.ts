@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {HttpModule,JsonpModule} from "@angular/http";
+
+import {HttpModule,JsonpModule} from "@angular/http";//jsonp 用于跨域请求
 import {HttpClientModule} from "@angular/common/http";
 
 import {RouterModule,Routes} from "@angular/router";
 //import {Router} from "@angular/router";
-
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -17,6 +17,7 @@ import { ListsComponent } from './components/lists/lists.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import { UpcomingComponent } from './components/upcoming/upcoming.component';
 import { PopularComponent } from './components/popular/popular.component';
+import { MoviesComponent } from './components/movies/movies.component';
 
 
 const appRoutes:Routes=[
@@ -39,7 +40,8 @@ const appRoutes:Routes=[
     MovieDetailComponent,
     PlayDetailComponent,
     UpcomingComponent,
-    PopularComponent
+    PopularComponent,
+    MoviesComponent
   ],
   imports: [
     BrowserModule,

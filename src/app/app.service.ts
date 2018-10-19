@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient,HttpParams} from "@angular/common/http";//anguar 4.3以上版本才支持
 //HttpClient  可以用来提供高效的、最新的、功能丰富的支持HTTP协议的客户端编程工具包
+//HttpClient  感觉挺好用的，数据处理更简便
 @Injectable()
 export class selfHttp{
   //以下的写法是比较标准的写法
@@ -21,6 +22,16 @@ export class selfHttp{
   //
   public post(url,data?:Object,fun?:Function){
     this.http.post(this.restServer+url,data).subscribe(data=>{
+     fun(data);//执行 回调函数
+    })
+  }
+  public put(url,data?:Object,fun?:Function){
+    this.http.put(this.restServer+url,data).subscribe(data=>{
+     fun(data);//执行 回调函数
+    })
+  }
+  public delete(url,data?:Object,fun?:Function){
+    this.http.delete(this.restServer+url,data).subscribe(data=>{
      fun(data);//执行 回调函数
     })
   }
