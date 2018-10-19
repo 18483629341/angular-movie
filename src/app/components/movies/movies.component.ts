@@ -1,15 +1,39 @@
 import { Component, OnInit } from '@angular/core';
+import {Router,ActivatedRoute,Params} from '@angular/router';
+import{ MoviesService }from "./../../movies.server";
+
 
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
-  styleUrls: ['./movies.component.css']
+  styleUrls: ['./movies.component.css'],
+  providers:[MoviesService]
 })
 export class MoviesComponent implements OnInit {
-
-  constructor() { }
+  id:number;
+  name:string;
+  movies:any;
+  constructor(
+    public http:MoviesService,
+    private route:ActivatedRoute,
+    private router:Router,
+  
+  ) {
+    this.route.params.subscribe((params:Params)=>{
+      console.log(params.id);
+      this.id=params.id;
+      this.name=params.name;
+      //this.user['id']=params.id;
+    });
+   }
 
   ngOnInit() {
+    
+    this.http.getMoviesByGenre(this.id).subscribe(res=>{
+      console.log(res);
+      this.movies=res.results;
+    })
+    
   }
 
 }
