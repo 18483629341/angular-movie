@@ -17,7 +17,7 @@ const MovieArr:Obj[]=[
 })
 export class ListsComponent implements OnInit {
   movies=MovieArr;
-  searchStr:string;
+  searchStr:string='';
   constructor() { }
 
   ngOnInit() {
