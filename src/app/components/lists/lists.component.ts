@@ -26,7 +26,7 @@ export class ListsComponent implements OnInit {
   constructor(private http: MoviesService) {
     this.title='Top Rated Movies 顶级电影';
   this.http.getMovies("top_rated").subscribe(res=>{
-    console.log(res);
+    //console.log(res);
     this.movies=res.results;
   })
   }
@@ -36,7 +36,7 @@ export class ListsComponent implements OnInit {
   searchMovies(){
     this.title='搜索结果';
     this.http.searchMovies(this.searchStr).subscribe(res=>{
-      console.log(res);
+     // console.log(res);
       this.movies=res.results;
     })
   }

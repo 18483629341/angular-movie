@@ -8,6 +8,7 @@ import { MovieDetailComponent } from './components/movie-detail/movie-detail.com
 import { PlayDetailComponent } from './components/play-detail/play-detail.component';
 import { MoviesComponent } from './components/movies/movies.component';
 
+
 export const appRoutes:Routes=[
   {path:"",component:ListsComponent,pathMatch:'full'},
   {path:"lists",component:ListsComponent},

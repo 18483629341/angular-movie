@@ -26,7 +26,7 @@ export class MoviesComponent implements OnInit {
       //this.user['id']=params.id;
       //这里路劲每跳转时，渲染一次
       this.http.getMoviesByGenre(this.id).subscribe(res=>{
-        console.log(res);
+        //console.log(res);
         this.movies=res.results;
       })
     });

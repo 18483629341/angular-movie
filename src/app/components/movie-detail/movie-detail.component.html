@@ -9,16 +9,16 @@
     <div class="col-md-8">
         <h2>{{movie.title}}
             <small class="label label-warning">
-          {{movie.vote_average}}
-          <i class="glyphicon glyphicon-star"></i>
-        </small>
+              {{movie.vote_average}}
+              <i class="glyphicon glyphicon-star"></i>
+            </small>
         </h2>
         <a class="go-back" (click)="goBack()">返回</a>
         <p>{{movie.tagline}}</p>
         <p>
             <a routerLink="/genres/{{genre.id}}/{{genre.name}}" *ngFor="let genre of movie.genres" class="label label-info m-r-md">
-          {{genre.name}}
-        </a>
+              {{genre.name}}
+            </a>
         </p>
         <h3>Overview</h3>
         <p>

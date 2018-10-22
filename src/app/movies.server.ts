@@ -61,7 +61,7 @@ export class MoviesService{
     return this._jsonp
     .get("https://api.themoviedb.org/3/search/movie/?callback=JSONP_CALLBACK",{search})
     .map(res=>{
-      console.log(res);
+     // console.log(res);
       return res.json();
     })
   }
@@ -72,7 +72,55 @@ export class MoviesService{
     return this._jsonp
     .get("https://api.themoviedb.org/3/movie/"+id+"?callback=JSONP_CALLBACK",{search})
     .map(res=>{
-      console.log(res);
+      //console.log(res);
+      return res.json();
+    })
+  }
+  //评论
+  public movieReviews(id){
+    var search=new URLSearchParams();
+    search.set('lauguage','en-US');
+    search.set('api_key',this.apikey);
+    return this._jsonp
+    .get("https://api.themoviedb.org/3/movie/"+id+"/reviews?callback=JSONP_CALLBACK",{search})
+    .map(res=>{
+      //console.log(res);
+      return res.json();
+    })
+  }
+  //演员表
+  public movieCredits(id){
+    var search=new URLSearchParams();
+    search.set('lauguage','en-US');
+    search.set('api_key',this.apikey);
+    return this._jsonp
+    .get("https://api.themoviedb.org/3/movie/"+id+"/credits?callback=JSONP_CALLBACK",{search})
+    .map(res=>{
+      //console.log(res);
+      return res.json();
+    })
+  }
+  //推荐电影
+  public similarMovies(id){
+    var search=new URLSearchParams();
+    search.set('lauguage','en-US');
+    search.set('api_key',this.apikey);
+    return this._jsonp
+    .get("https://api.themoviedb.org/3/movie/"+id+"/similar?callback=JSONP_CALLBACK",{search})
+    .map(res=>{
+      //console.log(res);
+      return res.json();
+    })
+  }
+  //获得演员信息
+  public playerDetail(id){
+    var search=new URLSearchParams();
+    search.set('lauguage','en-US');
+    search.set('api_key',this.apikey);
+    return this._jsonp
+    .get("https://api.themoviedb.org/3/person/"+id+"?callback=JSONP_CALLBACK",{search})
+    .map(res=>{
+      //console.log(res);
       return res.json();
     })
   }

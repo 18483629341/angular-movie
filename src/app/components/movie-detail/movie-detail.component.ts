@@ -10,6 +10,9 @@ import {Router,ActivatedRoute,Params} from '@angular/router';
 export class MovieDetailComponent implements OnInit {
   id:number;
   movie:Object;
+  cast:Object;
+  similarMovies:Object;
+  reviews:Object;
   constructor(  
     private http:MoviesService,
     private route:ActivatedRoute,
@@ -23,8 +26,20 @@ export class MovieDetailComponent implements OnInit {
 
   ngOnInit() {
     this.http.movieDetail(this.id).subscribe(res=>{
-      console.log(res);
+      //console.log(res);
       this.movie=res;
+    })
+    this.http.movieReviews(this.id).subscribe(res=>{
+     console.log(res);
+      this.reviews=res.results;
+    })
+    this.http.movieCredits(this.id).subscribe(res=>{
+     console.log(res);
+      this.cast=res.cast.slice(0,4);
+    })
+    this.http.similarMovies(this.id).subscribe(res=>{
+     // console.log(res);
+      this.similarMovies=res.results;
     })
   }
 
