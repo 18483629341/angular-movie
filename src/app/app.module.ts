@@ -18,6 +18,7 @@ import { MovieDetailComponent } from './components/movie-detail/movie-detail.com
 import { UpcomingComponent } from './components/upcoming/upcoming.component';
 import { PopularComponent } from './components/popular/popular.component';
 import { MoviesComponent } from './components/movies/movies.component';
+import { MovieViewComponent } from './components/movie-view/movie-view.component';
 
 
 const appRoutes:Routes=[
@@ -42,7 +43,8 @@ const appRoutes:Routes=[
     PlayDetailComponent,
     UpcomingComponent,
     PopularComponent,
-    MoviesComponent
+    MoviesComponent,
+    MovieViewComponent
   ],
   imports: [
     BrowserModule,

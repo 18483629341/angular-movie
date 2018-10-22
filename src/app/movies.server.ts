@@ -10,8 +10,10 @@ import 'rxjs/Rx';
 @Injectable()
 export class MoviesService{
   apikey:string;
+  search:any;
   constructor(private _jsonp:Jsonp){
      this.apikey='fed69657ba4cc6e1078d2a6a95f51c8c';
+     
   }
   //获取分类
   public getGenres(){
@@ -34,6 +36,30 @@ export class MoviesService{
     //获取分类
     return this._jsonp
     .get("https://api.themoviedb.org/3/genre/"+id+"/movies?callback=JSONP_CALLBACK",{search})
+    .map(res=>{
+      console.log(res);
+      return res.json();
+    })
+  }
+  public getMovies(type){
+    var search=new URLSearchParams();
+    search.set('lauguage','en-US');
+    search.set('api_key',this.apikey);
+    return this._jsonp
+    .get("https://api.themoviedb.org/3/movie/"+type+"?callback=JSONP_CALLBACK",{search})
+    .map(res=>{
+      console.log(res);
+      return res.json();
+    })
+  }
+  public searchMovies(searchStr){
+    var search=new URLSearchParams();
+    search.set('lauguage','en-US');
+    search.set('api_key',this.apikey);
+    search.set('search_by','popularity')
+    search.set("query",searchStr)
+    return this._jsonp
+    .get("https://api.themoviedb.org/3/search/movie/?callback=JSONP_CALLBACK",{search})
     .map(res=>{
       console.log(res);
       return res.json();

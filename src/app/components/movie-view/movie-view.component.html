@@ -1,0 +1,17 @@
+<div class="thumbnail" *ngIf="movie">
+    <img src="https://image.tmdb.org/t/p/w300/{{movie.backdrop_path}}">
+    <div class="caption">
+        <h4 class="text-ellipsis">
+            <a title="title">{{movie.original_title}}</a>
+        </h4>
+
+        <p><strong>First Air Date: </strong>{{movie.release_date}}</p>
+        <p>
+            <a>View details &raquo;</a>
+            <small class="label label-success pull-right">
+            {{movie.vote_average}}
+          <i class="glyphicon glyphicon-star"></i>
+        </small>
+        </p>
+    </div>
+</div>

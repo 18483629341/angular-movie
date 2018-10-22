@@ -13,24 +13,13 @@
     </form>
 </div>
 
-<h3 class="orange-text">Top Rated Movies 顶级电影</h3>
-<div class="row is-flex">
-    <div class="col-sm-6 col-md-4 col-lg-3 col-xs-6">
-        <div class="thumbnail">
-            <img src="assets/img/abstract-image.jpg">
-            <div class="caption">
-                <h4 class="text-ellipsis">
-                    <a title="title">name</a>
-                </h4>
-                <p><strong>First Air Date: </strong>2018-08-01</p>
-                <p>
-                    <a>View details &raquo;</a>
-                    <small class="label label-success pull-right">
-                8.0
-                <i class="glyphicon glyphicon-star"></i>
-              </small>
-                </p>
-            </div>
+
+
+<div>
+    <h3 class="orange-text">{{title}}</h3>
+    <div class="row is-flex">
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xs-6" *ngFor="let movie of movies">
+            <movie-view [movie]="movie"></movie-view>
         </div>
     </div>
 </div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
-import {Router,ActivatedRoute,Params} from '@angular/router';
+
+import {MoviesService} from './../../movies.server';
+
 interface Obj{
   imgSrc:string,
   name:string
@@ -13,17 +15,30 @@ const MovieArr:Obj[]=[
 @Component({
   selector: 'lists',
   templateUrl: './lists.component.html',
-  styleUrls: ['./lists.component.css']
+  styleUrls: ['./lists.component.css'],
+  providers:[MoviesService]
 })
 export class ListsComponent implements OnInit {
-  movies=MovieArr;
+  movies:Object=null;
   searchStr:string='';
-  constructor() { }
+  searchLists:Object=null;
+  title;
+  constructor(private http: MoviesService) {
+    this.title='Top Rated Movies 顶级电影';
+  this.http.getMovies("top_rated").subscribe(res=>{
+    console.log(res);
+    this.movies=res.results;
+  })
+  }
 
   ngOnInit() {
   }
   searchMovies(){
-    
+    this.title='搜索结果';
+    this.http.searchMovies(this.searchStr).subscribe(res=>{
+      console.log(res);
+      this.movies=res.results;
+    })
   }
 
 }
