@@ -18,10 +18,10 @@ import { MovieDetailComponent } from './components/movie-detail/movie-detail.com
 //import { UpcomingComponent } from './components/upcoming/upcoming.component';
 import { PopularComponent } from './components/popular/popular.component';
 import { MoviesComponent } from './components/movies/movies.component';
-import { MovieViewComponent } from './components/movie-view/movie-view.component';
+//import { MovieViewComponent } from './components/movie-view/movie-view.component';
 
 import { UpcomingModule} from './components/upcoming/upcoming.module';//自定义模块
-
+import { MovieViewModule } from "./components/movie-view/movie-view.module";
 
 
 @NgModule({
@@ -36,7 +36,7 @@ import { UpcomingModule} from './components/upcoming/upcoming.module';//自定�
     //UpcomingComponent,
     PopularComponent,
     MoviesComponent,
-    MovieViewComponent
+    //MovieViewComponent
   ],
   imports: [//模块
     BrowserModule,
@@ -45,6 +45,7 @@ import { UpcomingModule} from './components/upcoming/upcoming.module';//自定�
     HttpModule,
     JsonpModule,
     UpcomingModule,//自定义模块
+    MovieViewModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

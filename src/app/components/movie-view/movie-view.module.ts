@@ -14,14 +14,13 @@ import {CommonModule} from "@angular/common";//公共模块的引用1
   ],
   imports: [
     BrowserModule,
-
-    
+    RouterModule.forRoot(appRoutes)
   ],
   //公共模块的引用3，允许其他模块的访问
   exports:[
     CommonModule,    
     MovieViewComponent,
-    RouterModule.forRoot(appRoutes)
+    
   ],
   providers: [],
   //bootstrap: [AppComponent]

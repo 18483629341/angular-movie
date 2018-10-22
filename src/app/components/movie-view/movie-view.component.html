@@ -2,7 +2,7 @@
     <img src="https://image.tmdb.org/t/p/w300/{{movie.backdrop_path}}">
     <div class="caption">
         <h4 class="text-ellipsis">
-            <a title="title">{{movie.original_title}}</a>
+            <a [(routerLink)]="'/movieDetail/'+movie.id">{{movie.original_title}}</a>
         </h4>
 
         <p><strong>First Air Date: </strong>{{movie.release_date}}</p>

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { UpcomingComponent } from './upcoming.component';
+import {MovieViewModule} from "../movie-view/movie-view.module";
 
 @NgModule({
   declarations: [
@@ -9,7 +10,7 @@ import { UpcomingComponent } from './upcoming.component';
   ],
   imports: [
     BrowserModule,
-
+    MovieViewModule
     
   ],
   providers: [],

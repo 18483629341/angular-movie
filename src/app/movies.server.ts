@@ -65,5 +65,16 @@ export class MoviesService{
       return res.json();
     })
   }
+  public movieDetail(id){
+    var search=new URLSearchParams();
+    search.set('lauguage','en-US');
+    search.set('api_key',this.apikey);
+    return this._jsonp
+    .get("https://api.themoviedb.org/3/movie/"+id+"?callback=JSONP_CALLBACK",{search})
+    .map(res=>{
+      console.log(res);
+      return res.json();
+    })
+  }
 
 }
