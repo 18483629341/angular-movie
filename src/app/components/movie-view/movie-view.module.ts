@@ -11,6 +11,7 @@ import {ActorComponent} from "./../actor/actor.component";
 @NgModule({
   declarations: [
     MovieViewComponent,
+    
     ActorComponent
   ],
   imports: [
