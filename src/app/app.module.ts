@@ -25,7 +25,7 @@ import { UpcomingModule} from './components/upcoming/upcoming.module';//自定�
 
 
 @NgModule({
-  declarations: [
+  declarations: [//组件
     AppComponent,
     HomeComponent,
     NavComponent,
@@ -38,13 +38,13 @@ import { UpcomingModule} from './components/upcoming/upcoming.module';//自定�
     MoviesComponent,
     MovieViewComponent
   ],
-  imports: [
+  imports: [//模块
     BrowserModule,
     FormsModule,
     HttpClientModule,
     HttpModule,
     JsonpModule,
-    UpcomingModule,
+    UpcomingModule,//自定义模块
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
