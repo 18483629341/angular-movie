@@ -7,7 +7,7 @@ import { PopularComponent } from './components/popular/popular.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import { PlayDetailComponent } from './components/play-detail/play-detail.component';
 import { MoviesComponent } from './components/movies/movies.component';
-
+import {ActorComponent} from "./components/actor/actor.component"
 
 export const appRoutes:Routes=[
   {path:"",component:ListsComponent,pathMatch:'full'},
@@ -16,5 +16,6 @@ export const appRoutes:Routes=[
   {path:"popular",component:ListsComponent,pathMatch:'full'},
   {path:"movieDetail/:id",component:MovieDetailComponent},
   {path:"playDetail",component:PlayDetailComponent},
-  {path:"genres/:id/:name",component:MoviesComponent}
+  {path:"genres/:id/:name",component:MoviesComponent},
+  {path:"actor/:id",component:ActorComponent}
 ]

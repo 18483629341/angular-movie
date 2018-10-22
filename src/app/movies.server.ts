@@ -113,7 +113,7 @@ export class MoviesService{
     })
   }
   //获得演员信息
-  public playerDetail(id){
+  public getPersonDetail(id){
     var search=new URLSearchParams();
     search.set('lauguage','en-US');
     search.set('api_key',this.apikey);
@@ -124,5 +124,14 @@ export class MoviesService{
       return res.json();
     })
   }
+  public getPersonCast(id:string) {
+    var search = new URLSearchParams();
+    search.set('api_key', this.apikey);
+    return this._jsonp.get('https://api.themoviedb.org/3/person/'+ id +'/movie_credits?callback=JSONP_CALLBACK', {search})
+      .map(res => {
+        return res.json();
+      })
+  }
+  
 
 }
