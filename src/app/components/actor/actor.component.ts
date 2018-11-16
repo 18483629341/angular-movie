@@ -7,7 +7,7 @@ import {Router,ActivatedRoute,Params} from '@angular/router';
   styleUrls: ['./actor.component.css']
 })
 export class ActorComponent implements OnInit {
-  id:number;
+  id:number;person:Object;movies:any;
   constructor( 
     private http:MoviesService,
     private route:ActivatedRoute,
@@ -21,7 +21,7 @@ export class ActorComponent implements OnInit {
         this.person = person;
       });
       this.http.getPersonCast(id).subscribe(res => {
-        this.movies = res.cast;
+       this.movies = res.cast;
       });
     })
   }

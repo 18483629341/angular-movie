@@ -1,10 +1,22 @@
 <div class="row" *ngIf="movie">
     <!--电影基本信息-->
     <div class="col-md-4">
-        <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="" class="thumbnail">
+        <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="" class="img-responsive thumbnail ">
         <p>
             <a *ngIf="movie.homepage" href="{{movie.homepage}}" class="btn btn-info btn-block" target="_blank">Visit Movies Website</a>
         </p>
+        <!--评论-->
+        <div class="row" *ngIf="reviews && reviews.length > 0">
+            <div class="col-md-12">
+                <h2>Reviews</h2>
+            </div>
+            <div class="col-md-12" *ngFor="let review of reviews">
+                <div>
+                    <p class="text-justify">{{review.content}}</p>
+                    <div title="{{review.author}}"><a>{{review.author}}</a></div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="col-md-8">
         <h2>{{movie.title}}
@@ -50,15 +62,3 @@
     </div>
 </div>
 <!--Similar Movies-->
-<!--评论-->
-<div class="row" *ngIf="reviews && reviews.length > 0">
-    <div class="col-md-12">
-        <h2>Reviews</h2>
-    </div>
-    <div class="col-md-6" *ngFor="let review of reviews">
-        <div>
-            <p class="text-justify">{{review.content}}</p>
-            <div title="{{review.author}}"><a>{{review.author}}</a></div>
-        </div>
-    </div>
-</div>
