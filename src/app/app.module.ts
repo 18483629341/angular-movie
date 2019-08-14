@@ -20,12 +20,12 @@ import { PopularComponent } from './components/popular/popular.component';
 import { MoviesComponent } from './components/movies/movies.component';
 //import { MovieViewComponent } from './components/movie-view/movie-view.component';
 
-import { UpcomingModule} from './components/upcoming/upcoming.module';//自定义模块
+import { UpcomingModule} from './components/upcoming/upcoming.module'; //自定义模块
 import { MovieViewModule } from "./components/movie-view/movie-view.module";
 
 
 @NgModule({
-  declarations: [//组件
+  declarations: [ // 组件
     AppComponent,
     HomeComponent,
     NavComponent,
@@ -38,13 +38,13 @@ import { MovieViewModule } from "./components/movie-view/movie-view.module";
     MoviesComponent,
     //MovieViewComponent
   ],
-  imports: [//模块
+  imports: [// 模块
     BrowserModule,
     FormsModule,
     HttpClientModule,
     HttpModule,
     JsonpModule,
-    UpcomingModule,//自定义模块
+    UpcomingModule, // 自定义模块
     MovieViewModule,
     RouterModule.forRoot(appRoutes)
   ],
